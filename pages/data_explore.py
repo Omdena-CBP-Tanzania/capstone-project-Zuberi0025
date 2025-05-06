@@ -7,16 +7,16 @@ def show(df1):
     
     """
     st.header('Data Exploration')
-    st.subheader("Raw temperature Data")
+    st.subheader("Raw Rainfall and Temperature Data")
     st.dataframe(df1.head(10))
     st.subheader("Statistical summary")
     st.write(df1['Rainfall'].describe())
     
     #
-    st.subheader("Temperature Over time")
+    st.subheader("Rainfall Over time")
     fig=plot_time_series(df1)
     st.pyplot(fig)
-    st.subheader("Seasonal temperature patterns")
+    st.subheader("Seasonal Rainfall patterns")
     fig=plot_seasonal_pattern(df1)
     st.pyplot(fig)
     st.subheader("Yearly Avg temp")
