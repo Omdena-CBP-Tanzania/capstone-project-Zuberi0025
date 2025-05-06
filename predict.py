@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 
 #Prediction function
-def make_prediction(model,year,month,avg,max,min):
+def make_prediction(model,year,month,max,min):
     """Rainfall prediction for given year and month"""
-    features=np.array([[year,month,avg,max,min]])
+    features=np.array([[year,month,max,min]])
     return model.predict(features)[0]
 
 #Get Historical context

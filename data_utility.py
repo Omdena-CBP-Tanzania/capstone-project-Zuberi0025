@@ -10,8 +10,8 @@ def load_dt():
     year=df1['Year']
     month=df1['Month']
     rain=df1['Rainfall']
-    year1=df1["Year"]
-    month1=df1['Month']
+    max=df1['Max_Temp']
+    min=df1['Min_Temp']
     return df1
 
 def prepare_features(df1):

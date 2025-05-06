@@ -24,12 +24,12 @@ def show(df1):
             metrics=evaluate_model(model,X_train,y_train,X_test,y_test)
             col1,col2=st.columns(2)
             with col1:
-                st.subheader("Training meterics")
-                st.write(f"RMSE:{metrics['train_rmse']:.2f} C")
+                st.subheader("Training Metrics")
+                st.write(f"RMSE:{metrics['train_rmse']:.2f} mm")
                 st.write(f"R2:{metrics['train_r2']:4f}")
             with col2:
-                st.subheader("Testing meterics")
-                st.write(f"RMSE:{metrics['test_rmse']:.2f} C")
+                st.subheader("Testing Metrics")
+                st.write(f"RMSE:{metrics['test_rmse']:.2f} mm")
                 st.write(f"R2:{metrics['test_r2']:4f}")
                 
             #Plot actual vs predicted
