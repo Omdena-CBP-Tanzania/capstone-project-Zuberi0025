@@ -1,24 +1,24 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-from visualization import plot_time_series,plot_seasonal_pattern,plot_actual_vs_predicted,plot_yearly_trends,plot_prediction_context
-def show(df):
+from visualize import plot_time_series,plot_seasonal_pattern,plot_actual_vs_predicted,plot_yearly_trends,plot_prediction_context
+def show(df1):
     """
     Display the data exploartion page
     
     """
     st.header('Data Exploration')
     st.subheader("Raw temperature Data")
-    st.dataframe(df.head(10))
+    st.dataframe(df1.head(10))
     st.subheader("Statistical summary")
-    st.write(df['temperature'].describe())
+    st.write(df1['Rainfall'].describe())
     
     #
     st.subheader("Temperature Over time")
-    fig=plot_time_series(df)
+    fig=plot_time_series(df1)
     st.pyplot(fig)
     st.subheader("Seasonal temperature patterns")
-    fig=plot_seasonal_pattern(df)
+    fig=plot_seasonal_pattern(df1)
     st.pyplot(fig)
     st.subheader("Yearly Avg temp")
-    fig=plot_yearly_trends(df)
+    fig=plot_yearly_trends(df1)
     st.pyplot(fig)

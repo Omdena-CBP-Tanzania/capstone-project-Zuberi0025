@@ -1,13 +1,13 @@
 import streamlit as st
 import matplotlib.pyplot as plt
-from data_utilis import prepare_features
-from visualization import plot_actual_vs_predicted
+from data_utility import prepare_features
+from visualize import plot_actual_vs_predicted
 from model_utils import split_data,train_test_split,evaluate_model,load_model,save_model,train_model
 
-def show(df):
+def show(df1):
     st.header("Model training")
     #Preapre features
-    X,y =prepare_features(df)
+    X,y =prepare_features(df1)
     
     test_size=st.slider("Test data size(%)",10,30,20)/100
     X_train,X_test,y_train,y_test=split_data(X,y,test_size)
@@ -42,5 +42,4 @@ def show(df):
             st.success('Model trained has saved successfully')
             st.session_state['model']=model
             st.session_state['model_type']=model_type               
-    
     

@@ -3,10 +3,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from model_utils import load_model
-from visualization import plot_prediction_context
-from prediction import make_prediction,get_historical_context,get_historical_average
+from visualize import plot_prediction_context
+from predict import make_prediction,get_historical_context,get_historical_average
 
-def show(df):
+def show(df1):
     """Display the prediction page"""
     st.header("Temp predictions")
     #Chek if the model exit
@@ -22,18 +22,19 @@ def show(df):
     
     #Prediction Input
     st.subheader("select date for prediction")
-    pred_year=st.slider("Year",2010,2100,2025)
+    pred_year=st.slider("Year",2000,2100,2010)
     pred_month=st.slider("month",1,12,6)
-    
+    pred_year=st.slider("Year1",2000,2100,2010)
+    pred_month=st.slider("month1",1,12,6)
     #Make prediction
-    if st.button("Predict temperature"):
+    if st.button("Predict Rainfall"):
         model=st.session_state['model']
-        prediction=make_prediction(model,pred_year,pred_month)
+        prediction=make_prediction(model,pred_year,pred_month,pred_year,pred_month)
         #Dipslay results
         st.success(f"Predicted temperatures for {pred_year}-{pred_month:02d}:{prediction:.2f}")
         
         #Historical compare
-        hist_avg=get_historical_average(df,pred_month)
+        hist_avg=get_historical_average(df1,pred_month)
         st.write(f"historical average for month{pred_month}:{hist_avg:.2f}")
         
         #Calculate the difference
@@ -47,7 +48,7 @@ def show(df):
         st.subheader("Prediction in historical context")
         
         #Get the context
-        hist_temps=get_historical_context(df,pred_month)
+        hist_temps=get_historical_context(df1,pred_month)
         
         #Plot
         fig=plot_prediction_context(hist_temps,pred_year,pred_month,prediction)
