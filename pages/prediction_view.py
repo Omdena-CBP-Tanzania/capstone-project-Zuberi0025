@@ -24,12 +24,13 @@ def show(df1):
     st.subheader("select date for prediction")
     pred_year=st.slider("Year",2000,2100,2010)
     pred_month=st.slider("month",1,12,6)
-    pred_year=st.slider("Year1",2000,2100,2010)
-    pred_month=st.slider("month1",1,12,6)
+    pred_avg=st.slider("Avg_temp",20,28,21)
+    pred_max=st.slider("max_temp",25,32,27)
+    pred_min=st.slider("Min_temp",18,25,20)
     #Make prediction
     if st.button("Predict Rainfall"):
         model=st.session_state['model']
-        prediction=make_prediction(model,pred_year,pred_month,pred_year,pred_month)
+        prediction=make_prediction(model,pred_year,pred_month,pred_avg,pred_max,pred_min)
         #Dipslay results
         st.success(f"Predicted temperatures for {pred_year}-{pred_month:02d}:{prediction:.2f}")
         
