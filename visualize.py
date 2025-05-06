@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 
 def plot_time_series(df1):
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.plot(df1['Month'],df1['Rainfall'])
-    ax.set_xlabel("Date")
-    ax.set_ylabel("Temperature")
-    ax.set_title("Average Temp")
+    ax.plot(df1['Year'],df1['Rainfall'])
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Rainfall(mm)")
+    ax.set_title("Monthly Rainfall")
     ax.grid(True)
     return fig
 def plot_seasonal_pattern(df1):
@@ -17,11 +17,10 @@ def plot_seasonal_pattern(df1):
     fig,ax=plt.subplots(figsize=(8,5))
     sns.boxplot(x='Month',y="Rainfall",data=df1,ax=ax)
     ax.set_xlabel("month")
-    ax.set_ylabel("Temperature")
-    ax.set_title("Monthly Temp distribution")
+    ax.set_ylabel("Rainfall")
+    ax.set_title("Monthly Rainfall distribution")
     ax.grid(True)
     return fig
-
 
 
 def plot_yearly_trends(df1):
@@ -29,8 +28,8 @@ def plot_yearly_trends(df1):
     fig,ax=plt.subplots(figsize=(8,5))
     ax.plot(year_avg['Year'],year_avg['Rainfall'],marker='o')
     ax.set_xlabel("Year")
-    ax.set_ylabel("Temperature in C")
-    ax.set_title("Average Yearly Temp")
+    ax.set_ylabel("Rainfall(mm)")
+    ax.set_title("Total Yearly Rainfall")
     ax.grid(True)
     return fig
     
@@ -39,9 +38,9 @@ def plot_actual_vs_predicted(y_test,y_pred):
     fig,ax=plt.subplots(figsize=(8,5))
     ax.scatter(y_test,y_pred,alpha=0.7)
     ax.plot([min(y_test),max(y_test)],[min(y_test),max(y_test)],'r--')
-    ax.set_xlabel("Actual temp")
-    ax.set_ylabel("Predicted temp")
-    ax.set_title("Actual Vs Predicted Temp")
+    ax.set_xlabel("Actual Rainfall")
+    ax.set_ylabel("Predicted Rainfall")
+    ax.set_title("Actual Vs Predicted Rainfall")
     return fig
  
 def plot_prediction_context(hist_temps,pred_year,pred_month,prediction):
