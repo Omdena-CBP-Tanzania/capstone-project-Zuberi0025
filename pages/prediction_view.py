@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from model_utils import load_model
 from visualize import plot_prediction_context
 from predict import make_prediction,get_historical_context,get_historical_average
