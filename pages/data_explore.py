@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 from visualize import plot_time_series,plot_seasonal_pattern,plot_actual_vs_predicted,plot_yearly_trends,plot_prediction_context
 def show(df1):
     """

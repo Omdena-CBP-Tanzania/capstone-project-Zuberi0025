@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 from data_utility import prepare_features
 from visualize import plot_actual_vs_predicted
 from model_utils import split_data,train_test_split,evaluate_model,load_model,save_model,train_model
