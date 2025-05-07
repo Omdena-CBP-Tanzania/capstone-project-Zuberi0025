@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt 
 from pages import data_explore, model_train,prediction_view
 from data_utility import load_dt
 
