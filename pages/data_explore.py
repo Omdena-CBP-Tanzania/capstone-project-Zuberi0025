@@ -27,6 +27,6 @@ def show(df1):
     st.subheader("Seasonal Rainfall patterns")
     fig=plot_seasonal_pattern(df1)
     st.pyplot(fig)
-    st.subheader("Yearly Avg temp")
+    st.subheader("Yearly Avg Rainfall")
     fig=plot_yearly_trends(df1)
     st.pyplot(fig)

@@ -7,7 +7,7 @@ from predict import make_prediction,get_historical_context,get_historical_averag
 
 def show(df1):
     """Display the prediction page"""
-    st.header("Temp predictions")
+    st.header("Rainfall predictions")
     #Chek if the model exit
     if 'model' not in st.session_state:
         model=load_model()
@@ -31,7 +31,7 @@ def show(df1):
         model=st.session_state['model']
         prediction=make_prediction(model,pred_year,pred_month,pred_max,pred_min)
         #Dipslay results
-        st.success(f"Predicted temperatures for {pred_year}-{pred_month:02d}:{prediction:.2f}")
+        st.success(f"Predicted Rainfall for {pred_year}-{pred_month:02d}:{prediction:.2f}")
         
         #Historical compare
         hist_avg=get_historical_average(df1,pred_month)

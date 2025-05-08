@@ -11,7 +11,7 @@ df1=load_dt()
 #Give the title and desciption
 st.title("Climate Trend Analyis and Prediction")
 st.markdown(" Analysis historical Rainfall and predict future trends")
-st.sidebar.title("RESOURCES")
+st.sidebar.title("Operation Selection")
 page=st.sidebar.radio("Go to",['Data Analysis','Model Train','Prediction'])
 #Display selected page
 if page =="Data Analysis":
