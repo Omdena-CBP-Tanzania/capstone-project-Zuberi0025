@@ -12,11 +12,11 @@ df1=load_dt()
 st.title("Climate Trend Analyis and Prediction")
 st.markdown(" Analysis historical Rainfall and predict future trends")
 st.sidebar.title("RESOURCES")
-page=st.sidebar.radio("Go to",['Data Exploration','Model Training','Prediction'])
+page=st.sidebar.radio("Go to",['Data Analysis','Model Train','Prediction'])
 #Display selected page
-if page =="Data Exploration":
+if page =="Data Analysis":
     data_explore.show(df1)
-elif page =="Model Training":
+elif page =="Model Train":
     model_train.show(df1)
 else:
     prediction_view.show(df1)

@@ -5,21 +5,37 @@ import matplotlib.pyplot as plt
 
 def plot_time_series(df1):
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.plot(df1['Year'],df1['Rainfall'])
+    ax.scatter(df1['Year'],df1['Rainfall'],color='k')
     ax.set_xlabel("Year")
     ax.set_ylabel("Rainfall(mm)")
     ax.set_title("Monthly Rainfall")
-    ax.grid(True)
+    ax.grid(False)
+    return fig
+
+def plot_time_series1(df1):
+    fig,ax=plt.subplots(figsize=(8,5))
+    ax.scatter(df1['Year'],df1['Max_Temp'],color='r')
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Temperature")
+    ax.set_title("Maximum temperature")
+    return fig
+
+def plot_time_series2(df1):
+    fig,ax=plt.subplots(figsize=(8,5))
+    ax.scatter(df1['Year'],df1['Min_Temp'],color='g')
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Temperature")
+    ax.set_title("Minimum temperature")
     return fig
 def plot_seasonal_pattern(df1):
     
-    """"Monthly temp distribution"""
+    """"Monthly Rainfall distribution"""
     fig,ax=plt.subplots(figsize=(8,5))
     sns.boxplot(x='Month',y="Rainfall",data=df1,ax=ax)
     ax.set_xlabel("month")
     ax.set_ylabel("Rainfall")
     ax.set_title("Monthly Rainfall distribution")
-    ax.grid(True)
+    ax.grid(False)
     return fig
 
 
@@ -30,7 +46,7 @@ def plot_yearly_trends(df1):
     ax.set_xlabel("Year")
     ax.set_ylabel("Rainfall(mm)")
     ax.set_title("Total Yearly Rainfall")
-    ax.grid(True)
+    ax.grid(False)
     return fig
     
 def plot_actual_vs_predicted(y_test,y_pred):
