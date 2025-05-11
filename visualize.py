@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def plot_time_series(df1):
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.scatter(df1['Year'],df1['Rainfall'],color='k')
+    ax.scatter(df1['Year'],df1['Yield'],color='k')
     ax.set_xlabel("Year")
     ax.set_ylabel("Rainfall(mm)")
     ax.set_title("Monthly Rainfall")
@@ -13,7 +13,7 @@ def plot_time_series(df1):
 
 def plot_time_series1(df1):
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.scatter(df1['Year'],df1['Max_Temp'],color='r')
+    ax.scatter(df1['Year'],df1['TMX'],color='r')
     ax.set_xlabel("Year")
     ax.set_ylabel("Temperature")
     ax.set_title("Maximum temperature")
@@ -21,7 +21,7 @@ def plot_time_series1(df1):
 
 def plot_time_series2(df1):
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.scatter(df1['Year'],df1['Min_Temp'],color='g')
+    ax.scatter(df1['Year'],df1['TMN'],color='g')
     ax.set_xlabel("Year")
     ax.set_ylabel("Temperature")
     ax.set_title("Minimum temperature")
@@ -39,9 +39,9 @@ def plot_seasonal_pattern(df1):
 
 
 def plot_yearly_trends(df1):
-    year_avg=df1.groupby('Year')['Rainfall'].mean().reset_index()
+    year_avg=df1.groupby('Year')['Yield'].mean().reset_index()
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.plot(year_avg['Year'],year_avg['Rainfall'],marker='o')
+    ax.plot(year_avg['Year'],year_avg['Yield'],marker='o')
     ax.set_xlabel("Year")
     ax.set_ylabel("Rainfall(mm)")
     ax.set_title("Total Yearly Rainfall")
