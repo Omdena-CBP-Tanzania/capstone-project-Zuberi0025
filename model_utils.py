@@ -1,5 +1,6 @@
 import numpy as np
 import pickle
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
@@ -32,16 +33,16 @@ def evaluate_model(model,X_train,y_train,X_test, y_test):
     return metrics
 
 #Save the model
-def save_model(model,filename="climate_model.pkl"):
+def save_model(model,filename="climate_model.jbl"):
     """Save the model to disk"""
     with open(filename,'wb')as file:
-        pickle.dump(model,file)
+        joblib.dump(model,file)
         
 #Load the model
-def load_model(filename='climate_model.pkl') :
+def load_model(filename='climate_model.jbl') :
     try:
         with open(filename,'rb') as file:
-            model=pickle.load(file)
+            model=joblib.load(file)
         return model
     except FileNotFoundError:
         return None     

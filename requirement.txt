@@ -15,3 +15,4 @@ python-dateutil==2.9.0.post0
 pytz==2025.2
 watchdog==6.0.0
 typing-extensions==4.13.2
+joblib
