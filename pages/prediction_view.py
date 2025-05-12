@@ -30,7 +30,7 @@ def show(df1):
     #Make prediction
     if st.button("Predict Rainfall"):
         model=st.session_state['model']
-        prediction=make_prediction(model,pred_month,pred_day,pred_max,pred_min)
+        prediction=make_prediction(model,pred_year,pred_month,pred_day,pred_max,pred_min)
         #Dipslay results
         st.success(f"Predicted Rainfall for {pred_year}-{pred_month:02d}:{prediction:.2f}")
         
