@@ -9,10 +9,11 @@ st.set_page_config(
 #LOAD DATA
 df1=load_dt()
 #Give the title and desciption
-st.title("Climate Trend Analyis and Prediction")
+st.title("Climate Trend Analysis and Prediction")
 st.markdown(" Analysis historical Rainfall and predict future trends")
 st.sidebar.title("Operation Selection")
-page=st.sidebar.radio("Go to",['Data Analysis','Model Train','Prediction'])
+#page=st.sidebar.radio("Go to",['Data Analysis','Model Train','Prediction'])
+page=st.sidebar.selectbox("Select",['Data Analysis','Model Train','Predict'])
 #Display selected page
 if page =="Data Analysis":
     data_explore.show(df1)

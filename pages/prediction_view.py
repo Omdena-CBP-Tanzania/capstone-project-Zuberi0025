@@ -24,8 +24,8 @@ def show(df1):
     pred_year=st.slider("Year",2000,2100,2010)
     pred_month=st.slider("month",1,12,6)
     #pred_avg=st.slider("Avg_temp",20,28,21)
-    pred_max=st.slider("Max_Temp",25,32,27)
-    pred_min=st.slider("Min_Temp",18,25,20)
+    pred_max=st.sidebar.slider("Max_Temp (°C)",min_value=float( df1['TMX'].min(),max_value=float(df1['TMX'])))
+    pred_min=st.slider("Min_Temp",18,25,20) 
     #Make prediction
     if st.button("Predict Rainfall"):
         model=st.session_state['model']
