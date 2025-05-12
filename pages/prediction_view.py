@@ -23,14 +23,14 @@ def show(df1):
     st.subheader("select date for prediction")
     pred_year=st.slider("Year",2000,2100,2010)
     pred_month=st.slider("month",1,12,6)
-    pred_month=st.slider("Day",1,31,15)
+    pred_day=st.slider("Day",1,31,15)
     pred_max=st.slider("Max_temp",20,32,25)
     #pred_max=st.sidebar.slider("Max_Temp (°C)",min_value=float( df1['TMX'].min(),max_value=float(df1['TMX'])))
-    pred_min=st.slider("Min_Temp",18,25,20) 
+    #pred_min=st.slider("Min_Temp",18,25,20) 
     #Make prediction
     if st.button("Predict Rainfall"):
         model=st.session_state['model']
-        prediction=make_prediction(model,pred_year,pred_month,pred_max,pred_min)
+        prediction=make_prediction(model,pred_year,pred_month,pred_day,pred_max)
         #Dipslay results
         st.success(f"Predicted Rainfall for {pred_year}-{pred_month:02d}:{prediction:.2f}")
         

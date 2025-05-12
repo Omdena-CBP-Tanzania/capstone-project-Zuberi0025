@@ -18,6 +18,6 @@ def load_dt():
 
 def prepare_features(df1):
     #Prepare features for model Training 
-    X=df1.iloc[:,3:6].values
-    y=df1.iloc[:,3].values
+    X=df1.iloc[:,2:6].values
+    y=df1.iloc[:,1].values
     return X, y
