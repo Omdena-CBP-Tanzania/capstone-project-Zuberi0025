@@ -9,14 +9,14 @@ def make_prediction(model,year,month,day,max,min):
 
 #Get Historical context
 def get_historical_context(df1, month):
-    years=df1['Year'].unique()
+    years=df1['Month'].unique()
     hist_temps=[]
     
     for year in years:
-        month_data=df1[(df1['Year']==year)&(df1['Month']==month)]
+        month_data=df1[(df1['Month']==year)&(df1['Date']==month)]
         if not month_data.empty:
             hist_temps.append((year,month_data['Rainfall'].values[0]))
     return hist_temps
 
 def get_historical_average(df,month):
-    return df[df['Month']==month]['Rainfall'].mean()
+    return df[df['Date']==month]['Rainfall'].sum()
