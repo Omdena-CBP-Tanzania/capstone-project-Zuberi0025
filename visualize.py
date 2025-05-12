@@ -30,9 +30,9 @@ def plot_seasonal_pattern(df1):
     
     """"Monthly Rainfall distribution"""
     fig,ax=plt.subplots(figsize=(8,5))
-    avg=df1.groupby('Year')['AVG'].mean().reset_index()
-    ax.plot(avg["Year"],avg["AVG"],marker='o',color='green')
-    ax.set_xlabel("month")
+    avg=df1.groupby('Month')['Rainfall'].mean().reset_index()
+    ax.plot(avg["Month"],avg["Rainfall"],marker='o',color='green')
+    ax.set_xlabel("Month")
     ax.set_ylabel("Rainfall")
     ax.set_title("Monthly Rainfall distribution")
     ax.grid(False)
