@@ -15,8 +15,8 @@ def get_historical_context(df1, month):
     for year in years:
         month_data=df1[(df1['Year']==year)&(df1['Month']==month)]
         if not month_data.empty:
-            hist_temps.append((year,month_data['Yield'].values[0]))
+            hist_temps.append((year,month_data['Rainfall'].values[0]))
     return hist_temps
 
 def get_historical_average(df,month):
-    return df[df['Month']==month]['Yield'].mean()
+    return df[df['Month']==month]['Rainfall'].mean()
