@@ -13,7 +13,7 @@ def show(df1):
     st.write(df1['Rainfall'].describe())
     st.write(df1['TMX'].describe())
     st.write(df1['TMN'].describe())
-    st.write(df1['AVG'].describe())    
+    #st.write(df1['AVG'].describe())    
     #VISUALIZE
     st.subheader("Rainfall Over time")
     fig=plot_time_series(df1)

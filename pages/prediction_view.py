@@ -23,6 +23,7 @@ def show(df1):
     st.subheader("select date for prediction")
     pred_year=st.slider("Year",2000,2100,2010)
     pred_month=st.slider("month",1,12,6)
+    pred_month=st.slider("Day",1,31,15)
     pred_max=st.slider("Max_temp",20,32,25)
     #pred_max=st.sidebar.slider("Max_Temp (°C)",min_value=float( df1['TMX'].min(),max_value=float(df1['TMX'])))
     pred_min=st.slider("Min_Temp",18,25,20) 
