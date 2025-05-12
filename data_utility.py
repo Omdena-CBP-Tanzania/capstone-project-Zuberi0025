@@ -5,7 +5,7 @@ import streamlit as st
 @st.cache_data
 
 def load_dt():
-    df1=pd.read_csv("SatationX.csv")
+    df1=pd.read_csv("stationX.csv")
     
     year=df1['Year']
     month=df1['Month']
