@@ -30,7 +30,8 @@ def plot_seasonal_pattern(df1):
     
     """"Monthly Rainfall distribution"""
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.histplot(df1["Year"],df1["Yield"])
+    avg=df1.groupby('Year')['PREC'].mean().reset_index()
+    ax.plot(avg["Year"],avg["PREC"],marker='--',color='green')
     ax.set_xlabel("month")
     ax.set_ylabel("Rainfall")
     ax.set_title("Monthly Rainfall distribution")
