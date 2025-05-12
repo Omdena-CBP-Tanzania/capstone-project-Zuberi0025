@@ -29,13 +29,13 @@ def plot_time_series2(df1):
 def plot_seasonal_pattern(df1):
     
     """"Monthly Rainfall distribution"""
-    #fig,ax=plt.subplots(figsize=(8,5))
-    #ax.boxplots(df1["Year"],df1["Yield"])
-    #ax.set_xlabel("month")
-    #ax.set_ylabel("Rainfall")
-    #ax.set_title("Monthly Rainfall distribution")
-    #ax.grid(False)
-    #return fig
+    fig,ax=plt.subplots(figsize=(8,5))
+    ax.boxplots(df1["Year"],df1["Yield"])
+    ax.set_xlabel("month")
+    ax.set_ylabel("Rainfall")
+    ax.set_title("Monthly Rainfall distribution")
+    ax.grid(False)
+    return fig
 
 
 def plot_yearly_trends(df1):
