@@ -9,8 +9,8 @@ def load_dt():
     
     year=df1['Year']
     month=df1['Month']
-    Yield=df1['Yield']
-    rain=df1['PREC']
+    Yield=df1['Rainfall']
+    rain=df1['AVG']
     max=df1['TMX']
     min=df1['TMN']
     #spi=df1['SPI']

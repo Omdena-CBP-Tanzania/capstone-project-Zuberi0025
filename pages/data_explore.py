@@ -6,14 +6,14 @@ def show(df1):
     Display the data exploartion page
     
     """
-    st.header('Data Exploration')
-    st.subheader("Raw Rainfall and Temperature Data")
-    st.dataframe(df1.head(10))
+    st.header('EDA')
+    st.subheader("Rainfall and Temperature Data")
+    st.dataframe(df1.head(5))
     st.subheader("Statistical summary")
-    st.write(df1['Yield'].describe())
+    st.write(df1['Rainfall'].describe())
     st.write(df1['TMX'].describe())
     st.write(df1['TMN'].describe())
-    st.write(df1['PREC'].describe())    
+    st.write(df1['AVG'].describe())    
     #VISUALIZE
     st.subheader("Rainfall Over time")
     fig=plot_time_series(df1)

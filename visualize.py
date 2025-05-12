@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def plot_time_series(df1):
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.scatter(df1['Year'],df1['Yield'],color='k')
+    ax.scatter(df1['Year'],df1['Rainfall'],color='k')
     ax.set_xlabel("Year")
     ax.set_ylabel("Rainfall(mm)")
     ax.set_title("Monthly Rainfall")
@@ -30,8 +30,8 @@ def plot_seasonal_pattern(df1):
     
     """"Monthly Rainfall distribution"""
     fig,ax=plt.subplots(figsize=(8,5))
-    avg=df1.groupby('Year')['PREC'].mean().reset_index()
-    ax.plot(avg["Year"],avg["PREC"],marker='o',color='green')
+    avg=df1.groupby('Year')['AVG'].mean().reset_index()
+    ax.plot(avg["Year"],avg["AVG"],marker='o',color='green')
     ax.set_xlabel("month")
     ax.set_ylabel("Rainfall")
     ax.set_title("Monthly Rainfall distribution")
@@ -40,9 +40,9 @@ def plot_seasonal_pattern(df1):
 
 
 def plot_yearly_trends(df1):
-    year_avg=df1.groupby('Year')['Yield'].mean().reset_index()
+    year_avg=df1.groupby('Year')['Rainfall'].mean().reset_index()
     fig,ax=plt.subplots(figsize=(8,5))
-    ax.plot(year_avg['Year'],year_avg['Yield'],marker='o')
+    ax.plot(year_avg['Year'],year_avg['Rainfall'],marker='o')
     ax.set_xlabel("Year")
     ax.set_ylabel("Rainfall(mm)")
     ax.set_title("Total Yearly Rainfall")
