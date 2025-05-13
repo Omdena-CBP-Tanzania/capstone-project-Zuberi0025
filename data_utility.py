@@ -23,4 +23,3 @@ def prepare_features(df1):
     y=df1.iloc[:,1].values
     return X, y
 
-##Prepare features for LSTM Model

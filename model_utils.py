@@ -5,6 +5,7 @@ import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.svm import SVR
 from sklearn.metrics import mean_absolute_error,root_mean_squared_error,r2_score
 
 #Data split
@@ -15,6 +16,8 @@ def train_model(X_train,y_train,model_type="Linear Regression Model"):
     """Train the model based on the specified type of the model"""
     if model_type=="Linear Regression":
         model=LinearRegression()
+    elif model_type=="Support Vector Regression":
+        model=SVR(kernel="linear",C=100,gamma="auto",epsilon=0.1)
     else:
         model=RandomForestRegressor(n_estimators=150,random_state=42)
     model.fit(X_train,y_train)
