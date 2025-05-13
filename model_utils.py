@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.svm import SVR
+import xgboost as xgb
 from sklearn.metrics import mean_absolute_error,root_mean_squared_error,r2_score
 
 #Data split
@@ -17,6 +18,8 @@ def train_model(X_train,y_train,model_type="Linear Regression Model"):
         model=LinearRegression()
     elif model_type=="Support Vector Machine":
         model=SVR(kernel="rbf",C=100,gamma="scale",epsilon=0.1)
+    elif model_type=="XGBoost":
+        model=xgb.XGBRegressor(n_estimators=100,learning_rate=0.01,max_depth=3,random_state=42)
     else:
         model=RandomForestRegressor(n_estimators=150,random_state=42)
     model.fit(X_train,y_train)

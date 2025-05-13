@@ -14,7 +14,7 @@ def show(df1):
     st.write(f"Training Data:{len(X_train)} samples")
     st.write(f"Testing Data:{len(X_test)} samples")
     
-    model_type=st.selectbox("Select the model type",['Support Vector Machine','Random Forest','Linear Regression'])
+    model_type=st.selectbox("Select the model type",['Support Vector Machine','Random Forest','XGBoost','Linear Regression'])
     
     #Train the model
     if st.button("Train model"):
@@ -23,11 +23,11 @@ def show(df1):
             metrics=evaluate_model(model,X_train,y_train,X_test,y_test)
             col1,col2=st.columns(2)
             with col1:
-                st.subheader("Training Metrics")
+                st.subheader("Train Metrics")
                 st.write(f"RMSE:{metrics['train_rmse']:.2f} mm")
                 st.write(f"R2:{metrics['train_r2']:4f}")
             with col2:
-                st.subheader("Testing Metrics")
+                st.subheader("Test Metrics")
                 st.write(f"RMSE:{metrics['test_rmse']:.2f} mm")
                 st.write(f"R2:{metrics['test_r2']:4f}")
                 
