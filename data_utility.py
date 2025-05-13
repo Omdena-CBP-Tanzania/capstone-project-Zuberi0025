@@ -5,7 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 @st.cache_data
 
 def load_dt():
-    df1=pd.read_csv("stationX.csv")
+    df1=pd.read_csv("tanzania_climate_data.csv")
     
     year=df1['Year']
     month=df1['Month']
