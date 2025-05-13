@@ -21,22 +21,22 @@ def show(df1):
     
     #Prediction Input
     st.subheader("select date for prediction")
-    pred_year=st.slider("Year",2000,2100,2010)
+    pred_year=st.slider("Year",1982,2030,2021)
     pred_month=st.slider("month",1,12,6)
-    pred_day=st.slider("Day",1,31,15)
+    pred_avg=st.slider("Avg",20,28,25)
     pred_max=st.slider("Max_temp",20,32,25)
     #pred_max=st.sidebar.slider("Max_Temp (°C)",min_value=float( df1['TMX'].min(),max_value=float(df1['TMX'])))
     pred_min=st.slider("Min_Temp",18,25,20) 
     #Make prediction
     if st.button("Predict Rainfall"):
         model=st.session_state['model']
-        prediction=make_prediction(model,pred_year,pred_month,pred_day,pred_max,pred_min)
+        prediction=make_prediction(model,pred_year,pred_month,pred_avg,pred_max,pred_min)
         #Dipslay results
         st.success(f"Predicted Rainfall for {pred_year}-{pred_month:02d}:{prediction:.2f}")
         
         #Historical compare
         hist_avg=get_historical_average(df1,pred_month)
-        st.write(f"historical average for month{pred_day}:{hist_avg:.2f}")
+        st.write(f"historical average for month{pred_month}:{hist_avg:.2f}")
         
         #Calculate the difference
         diff=prediction-hist_avg

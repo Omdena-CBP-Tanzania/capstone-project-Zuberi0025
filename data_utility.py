@@ -10,7 +10,7 @@ def load_dt():
     year=df1['Year']
     month=df1['Month']
     Yield=df1['Rainfall']
-    day=df1['Date']
+    avg=df1['AVG']
     max=df1['TMX']
     min=df1['TMN']
     #spi=df1['SPI']
@@ -18,7 +18,7 @@ def load_dt():
 
 def prepare_features(df1):
     #Prepare features for model Training 
-    X=df1.iloc[:,1:6].values
+    X=df1.iloc[:,2:6].values
     y=df1.iloc[:,1].values
     return X, y
 

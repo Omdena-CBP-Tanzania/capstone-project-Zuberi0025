@@ -14,7 +14,7 @@ def show(df1):
     st.write(f"Training Data:{len(X_train)} samples")
     st.write(f"Testing Data:{len(X_test)} samples")
     
-    model_type=st.selectbox("Select the model type",['Linear Regression','Random Forest','Support Vector Machine'])
+    model_type=st.selectbox("Select the model type",['Support Vector Machine','Random Forest','Linear Regression'])
     
     #Train the model
     if st.button("Train model"):
