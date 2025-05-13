@@ -16,7 +16,7 @@ def train_model(X_train,y_train,model_type="Linear Regression Model"):
     if model_type=="Linear Regression":
         model=LinearRegression()
     elif model_type=="Support Vector Machine":
-        model=SVR(kernel="linear",C=100,gamma="auto",epsilon=0.1)
+        model=SVR(kernel="rbf",C=100,gamma="scale",epsilon=0.1)
     else:
         model=RandomForestRegressor(n_estimators=150,random_state=42)
     model.fit(X_train,y_train)
