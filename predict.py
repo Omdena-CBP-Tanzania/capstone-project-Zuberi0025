@@ -19,4 +19,4 @@ def get_historical_context(df1, month):
     return hist_temps
 
 def get_historical_average(df,month):
-    return df[df['Month']==month]['Rainfall'].sum()
+    return df[df['Month']==month]['Rainfall'].mean()
