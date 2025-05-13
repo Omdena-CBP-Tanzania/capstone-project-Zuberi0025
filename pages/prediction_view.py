@@ -32,11 +32,11 @@ def show(df1):
         model=st.session_state['model']
         prediction=make_prediction(model,pred_year,pred_month,pred_day,pred_max,pred_min)
         #Dipslay results
-        st.success(f"Predicted Rainfall for {pred_year}-{pred_month:02d}:{prediction:.2f}")
+        st.success(f"Predicted Rainfall for {pred_year}-{pred_day:02d}:{prediction:.2f}")
         
         #Historical compare
-        hist_avg=get_historical_average(df1,pred_month)
-        st.write(f"historical average for month{pred_month}:{hist_avg:.2f}")
+        hist_avg=get_historical_average(df1,pred_day)
+        st.write(f"historical average for month{pred_day}:{hist_avg:.2f}")
         
         #Calculate the difference
         diff=prediction-hist_avg
@@ -49,8 +49,8 @@ def show(df1):
         st.subheader("Prediction in historical context")
         
         #Get the context
-        hist_temps=get_historical_context(df1,pred_month)
+        hist_temps=get_historical_context(df1,pred_day)
         
         #Plot
-        fig=plot_prediction_context(hist_temps,pred_year,pred_month,prediction)
+        fig=plot_prediction_context(hist_temps,pred_year,pred_day,prediction)
         st.pyplot(fig)                  
