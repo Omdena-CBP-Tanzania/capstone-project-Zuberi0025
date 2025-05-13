@@ -6,8 +6,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error,root_mean_squared_error,r2_score
-from tensorflow.keras.models import Sequantial
-from tensorflow.keras.layers import Dense,Droupout,Flatten,LSTM
 
 #Data split
 def split_data(X,y,test_size=0.2):
