@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-import tensorflow as tf
 from sklearn.preprocessing import MinMaxScaler
 @st.cache_data
 
